@@ -676,18 +676,18 @@ a {
     .question-text__heading {
     color: #5d3bee;
 }
-.question-input:checked ~ .question-img:nth-child(1) {
+.question-input:checked ~ .question-item label .question-img:nth-child(1) {
     display: inline;
 }
 .question-img:nth-child(2) {
     display: none;
 }
 
-.question-input:checked ~ label .question-img:nth-child(1) {
+.question-input:checked ~ .question-item label .question-img:nth-child(1) {
     display: none;
 }
 
-.question-input:checked ~ label .question-img:nth-child(2) {
+.question-input:checked ~ .question-item label .question-img:nth-child(2) {
     display: inline;
 }
 /* ======atmos=========== */

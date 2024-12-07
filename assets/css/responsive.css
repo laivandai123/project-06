@@ -420,6 +420,10 @@
         font-size: 3.6rem;
         line-height: 1.66;
     }
+    .question-text__desc {
+        font-size: 1.6rem;
+        line-height: 1.62;
+    }
     .question-list {
         display: flex;
         flex-direction: column;
