@@ -115,6 +115,9 @@ a {
 .navbar-list {
     display: flex;
 }
+.navbar-image {
+    cursor: pointer;
+}
 .navbar-link {
     color: #51586a;
     font-size: 1.8rem;
