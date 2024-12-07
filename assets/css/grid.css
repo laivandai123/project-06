@@ -174,11 +174,10 @@
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
     .container {
-        --spacer: 24px;
+        --spacer: 40px;
 
         max-width: 540px;
     }
-
     .g-sm-0 {
         --spacer: 0;
     }

@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="./assets/css/grid.css" />
         <!-- link style -->
         <link rel="stylesheet" href="./assets/css/style.css" />
+        <link rel="stylesheet" href="./assets/css/responsive.css" />
         <!-- link font -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -90,23 +91,30 @@
             content="./assets/favicon/ms-icon-144x144.png"
         />
         <meta name="theme-color" content="#ffffff" />
+        <!-- link animation -->
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     </head>
-    <body style="height: 10000px">
+    <body>
         <!-- header -->
-        <header class="header">
+        <header class="header header-fixed">
             <div class="container-nav">
                 <!-- nav -->
                 <nav class="navbar">
-                    <div class="navbar-image">
+                    <div class="navbar-image ">
                         <img
                             src="./assets/img/navbar-img.png"
                             alt=""
-                            class="navbar-img"
+                            class="navbar-img navbar-img-mobile"
                         />
                         <a href="mailto:hi@arif.interactive" class="navbar-email">hi@arif.interactive</a>
+                        <!-- navbar/tablet/mobile -->
+                     <label for="checkbox-menu" class="toggle-menu hide-on-mobile">
+                        <img src="./assets/img/navbar-mobile.png" alt="">
+                     </label>
                     </div>
-                    <img src="./assets/img/logo.png" alt="" class="logo" />
-                    <ul class="navbar-list">
+                    <!-- <img src="./assets/img/logo.png" alt="" class="logo" /> -->
+                    <img src="./assets/img/logo-mobile.svg" alt="" class="logo-mobile logo" />
+                    <ul class="navbar-list navbar-list-tablet">
                         <li>
                             <a href="" class="navbar-link"><span>Projects</span></a>
                         </li>
@@ -120,11 +128,41 @@
                             <a href="" class="navbar-link navbar-link__contact"><span>Contact</span></a>
                         </li>
                     </ul>
+                    
                 </nav>
                 </section>
             </div>
         </header>
-        <main class="main">
+        <!-- tablet/mobile header -->
+         <header class="mobile-header">
+            <input type="checkbox" name="" id="checkbox-menu" class="checkbox-menu" hidden>
+            <label for="checkbox-menu" class="overlay"></label>
+            <!-- menu-content -->
+             <div class="menu-drawer">
+                <img src="./assets/img/logo.png" alt="" class="menu-drawer__logo" />
+                <ul class="navbar-list">
+                    <li>
+                        <a href="" class="navbar-link"><span>Projects</span></a>
+                    </li>
+                    <li>
+                        <a href="" class="navbar-link"><span>Journey</span></a>
+                    </li>
+                    <li>
+                        <a href="" class="navbar-link"><span>Service</span></a>
+                    </li>
+                    <li>
+                        <a href="" class="navbar-link navbar-link__contact"><span>Contact</span></a>
+                    </li>
+                    <li>
+                        <a href="" class="navbar-link hide-on-tablet separate">Sign In</a>
+                    </li>
+                    <li>
+                        <a href="" class="navbar-link hi-on-tablet">Sign Up</a>
+                    </li>
+                </ul>
+             </div>
+         </header>
+        <main class="main" style=" background: #fbfaff;">
             <div class="container">
                  <!-- hero -->
                  <section class="hero">
@@ -134,11 +172,12 @@
                             src="./assets/img/hero-logo.png"
                             alt=""
                             class="figure-image__logo"
+                            data-aos="fade-up"
                         />
                     </figure>
                     <!-- hero-right -->
                     <section class="hero-text">
-                        <h1 class="section-heading hero-heading">
+                        <h1 class="section-heading hero-heading" data-aos="fade-left">
                             An Interactive Designer
                         </h1>
                         <p class="section-desc hero-desc">
@@ -204,7 +243,7 @@
                             <h2 class="service-heading section-heading">Specialities</h2>
                             <p class="service-desc section-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In urna, non nisl tincidunt ut elementum turpis.</p>
                         </div>
-                        <section class="row row-cols-lg-3">
+                        <section class="row row-cols-lg-3 service-row">
                             <div class="service-bot">
                             <article class="service-card">
                                 <img src="./assets/img/product.png" alt="" class="service-card__img">
@@ -220,11 +259,18 @@
                             </article>
                         </div>
                         <div class="service-bot">
-                            <article class="service-card">
+                            <article class="service-card" >
                                 <img src="./assets/img/interactive.png" alt="" class="service-card__img">
                                 <h3 class="service-card__heading">Interactive design</h3>
                                 <p class="service-card__desc">Lorem ipsum dolor sit amet, solor adipiscing elit. Non nisl solor ut elementum turpis.</p>
                             </article>
+                        </div>
+                        <div class="interactive-icon hide-on-mobile">
+                          
+                            <span class="interactive-icon__feed"></span>
+                            <span class="interactive-icon__feed active"></span>
+                            <span class="interactive-icon__feed"></span>
+                            
                         </div>
                         </section>
                      </section>
@@ -241,7 +287,9 @@
                 </section>
                 <div class="row row-cols-lg-2 blog-bot">
                 <div class="col">
-                   <article class="blog-inner">
+                   <article class="blog-inner" data-aos="fade-right"
+                   data-aos-offset="300"
+                   data-aos-easing="ease-in-sine">
                        <div class="blog-text">
                        <h3 class="blog-text__heading">Wally Website</h3>
                        <p class="blog-text__desc">Lorem ipsum dolor amet, consectetur adipiscing st elit.</p>
@@ -251,7 +299,9 @@
                     </article>
                 </div>
                 <div class="col">
-                   <article class="blog-inner">
+                   <article class="blog-inner"data-aos="fade-left"
+                   data-aos-offset="300"
+                   data-aos-easing="ease-in-sine">
                        <div class="blog-text">
                        <h3 class="blog-text__heading">Banking App</h3>
                        <p class="blog-text__desc">Lorem ipsum dolor amet, consectetur adipiscing st elit.</p>
@@ -261,7 +311,9 @@
                     </article>
                 </div>
                 <div class="col">
-                   <article class="blog-inner">
+                   <article class="blog-inner" data-aos="fade-right"
+                   data-aos-offset="300"
+                   data-aos-easing="ease-in-sine">
                        <div class="blog-text">
                        <h3 class="blog-text__heading">Web App</h3>
                        <p class="blog-text__desc">Lorem ipsum dolor amet, consectetur adipiscing st elit.</p>
@@ -271,7 +323,9 @@
                     </article>
                 </div>
                 <div class="col">
-                   <article class="blog-inner">
+                   <article class="blog-inner" data-aos="fade-left"
+                   data-aos-offset="300"
+                   data-aos-easing="ease-in-sine">
                        <div class="blog-text">
                        <h3 class="blog-text__heading">Oculus Website</h3>
                        <p class="blog-text__desc">Lorem ipsum dolor amet, consectetur adipiscing st elit.</p>
@@ -341,27 +395,18 @@
              <!-- question -->
               <section class="question">
                 <div class="container">
+                    <div class="question-wrap__heading">
                     <h2 class="question-heading interactive-heading">A few questions</h2>
                     <span class="interactive-heading">clients normally ask me</span>
+                </div>
                     <div class="question-list">
-                        <div class="question-item">
-                            <input type="checkbox" name="question-name" id="toggle-description-1" class="question-input" hidden>
-                            <label for="toggle-description-1">
-                                <img src="./assets/img/cong.svg" alt="Hourly rate option" class="question-img">
-                                <img src="./assets/img/tru.svg" alt="Hourly rate option" class="question-img">
-                            </label>
-                            <div class="question-text">
-                                <h3 class="question-text__heading interactive-hatag">What is your hourly rate?</h3>
-                                <p class="question-text__desc section-desc">
-                                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. In urna, non nisl tincidunt ut elementum turpis.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="question-item">
+                        <div class="question-wrap">
+                        <input type="checkbox" name="question-name" id="toggle-description-2" class="question-input" hidden>
+                        <div class="question-item" >
                             <input type="checkbox" name="question-name" id="toggle-description-2" class="question-input" hidden>
                             <label for="toggle-description-2">
-                                <img src="./assets/img/cong.svg" alt="Hourly rate option" class="question-img">
-                                <img src="./assets/img/tru.svg" alt="Hourly rate option" class="question-img">
+                                <img src="./assets/img/cong.svg" alt="Expand" class="question-img">
+                                <img src="./assets/img/tru.svg" alt="Collapse" class="question-img">
                             </label>
                             <div class="question-text">
                                 <h3 class="question-text__heading interactive-hatag">What type of projects do you take on?</h3>
@@ -370,11 +415,14 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="question-item">
+                    </div>
+                    <div class="question-wrap">
+                        <input type="checkbox" name="question-name" id="toggle-description-3" class="question-input" hidden>
+                        <div class="question-item" >
                             <input type="checkbox" name="question-name" id="toggle-description-3" class="question-input" hidden>
                             <label for="toggle-description-3">
-                                <img src="./assets/img/cong.svg" alt="Hourly rate option" class="question-img">
-                                <img src="./assets/img/tru.svg" alt="Hourly rate option" class="question-img">
+                                <img src="./assets/img/cong.svg" alt="Expand" class="question-img">
+                                <img src="./assets/img/tru.svg" alt="Collapse" class="question-img">
                             </label>
                             <div class="question-text">
                                 <h3 class="question-text__heading interactive-hatag">How do you charge for projects ?</h3>
@@ -383,25 +431,30 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="question-item">
+                    </div>
+                        <div class="question-wrap">
+                        <input type="checkbox" name="question-name" id="toggle-description-4" class="question-input" hidden>
+                        <div class="question-item" >
                             <input type="checkbox" name="question-name" id="toggle-description-4" class="question-input" hidden>
                             <label for="toggle-description-4">
-                                <img src="./assets/img/cong.svg" alt="Hourly rate option" class="question-img">
-                                <img src="./assets/img/tru.svg" alt="Hourly rate option" class="question-img">
+                                <img src="./assets/img/cong.svg" alt="Expand" class="question-img">
+                                <img src="./assets/img/tru.svg" alt="Collapse" class="question-img">
                             </label>
                             <div class="question-text">
                                 <h3 class="question-text__heading interactive-hatag">What time-zone do you work in?</h3>
-
                                 <p class="question-text__desc section-desc">
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. In urna, non nisl tincidunt ut elementum turpis.
                                 </p>
                             </div>
                         </div>
-                        <div class="question-item">
+                    </div>
+                        <div class="question-wrap">
+                        <input type="checkbox" name="question-name" id="toggle-description-5" class="question-input" hidden>
+                        <div class="question-item" >
                             <input type="checkbox" name="question-name" id="toggle-description-5" class="question-input" hidden>
                             <label for="toggle-description-5">
-                                <img src="./assets/img/cong.svg" alt="Hourly rate option" class="question-img">
-                                <img src="./assets/img/tru.svg" alt="Hourly rate option" class="question-img">
+                                <img src="./assets/img/cong.svg" alt="Expand" class="question-img">
+                                <img src="./assets/img/tru.svg" alt="Collapse" class="question-img">
                             </label>
                             <div class="question-text">
                                 <h3 class="question-text__heading interactive-hatag">How often can we communicate?</h3>
@@ -410,9 +463,104 @@
                                 </p>
                             </div>
                         </div>
+                        </div>
                     </div>
                 </div>
               </section>
+              <!-- atmos box -->
+              <section class="atmos">
+                <div class="container">
+                <div class="service-top">
+                    <h2 class="service-heading section-heading atmos-heading">My atmosphere</h2>
+                    <p class="service-desc section-desc atmos-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In urna, non nisl tincidunt ut elementum turpis.</p>
+                    <p class="atmos-more">@interaction_arif</p>
+                </div>
+                <section class="row row-cols-lg-3 atmos-row">
+                    <div class="atmos-bot">
+                    <article class="atmos-card"data-aos="fade-up"
+                    data-aos-duration="3000">
+                        <img src="./assets/img/atmos-1.jpg" alt="" class="atmos-card__img">
+                    </article>
+                </div>
+                <div class="atmos-bot">
+                    <article class="atmos-card"data-aos="fade-up"
+                    data-aos-duration="3000">
+                        <img src="./assets/img/atmos-2.jpg" alt="" class="atmos-card__img">
+                    </article>
+                </div>
+                <div class="atmos-bot">
+                    <article class="atmos-card"data-aos="fade-up"
+                    data-aos-duration="3000">
+                        <img src="./assets/img/atmos-3.jpg" alt="" class="atmos-card__img">
+                    </article>
+                </div>
+                <div class="interactive-icon atmos-icon hide-on-mobile">
+                    <span class="interactive-icon__feed"></span>
+                    <span class="interactive-icon__feed"></span>
+                    <span class="interactive-icon__feed active"></span>
+                    <span class="interactive-icon__feed"></span>
+                    <span class="interactive-icon__feed"></span>
+                </div>
+                </section>
+            </div>
+             </section>
+             <!-- talk -->
+              <section class="talk">
+                <div class="container-talk">
+                    <section class="talk-inner">
+                        <img src="./assets/img/talk-img.svg" alt="" class="talk-img">
+                        <h2 class="talk-heading service-heading">Got a project? Let’s talk</h2>
+                        <p class="talk-desc atmos-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In urna, non nisl tincidunt ut elementum turpis.</p>
+                        <button class="talk-btn btn">Book a Call</button>
+                        <img  alt="" class="talk-decor__one">
+                        <img  alt="" class="talk-decor__two">
+                        <img  alt="" class="talk-decor__three">
+                    </section>
+                </div>
+              </section>
         </main>
+        <footer class="footer">
+            <div class="container-nav">
+             <!-- nav -->
+             <nav class="navbar navbar-mobile navbar-footer">
+                <div class="navbar-image navbar-image-mobile">
+                    <img
+                        src="./assets/img/navbar-img.png"
+                        alt=""
+                        class="navbar-img"
+                    />
+                    <a href="mailto:hi@arif.interactive" class="navbar-email navbar-email-mobile">hi@arif.interactive</a>
+                </div>
+                <img src="./assets/img/logo.png" alt="" class="logo logo-mobile logo-mobile-footer" />
+                <ul class="navbar-list navbar-list-mobile">
+                    <li>
+                        <a href="" class="navbar-link navbar-link-footer"><span>Projects</span></a>
+                    </li>
+                    <li>
+                        <a href="" class="navbar-link navbar-link-footer"><span>Journey</span></a>
+                    </li>
+                    <li>
+                        <a href="" class="navbar-link navbar-link-footer"><span>Service</span></a>
+                    </li>
+                    <li>
+                        <a href="" class="navbar-link navbar-link__contact navbar-link-footer"><span>Contact</span></a>
+                    </li>
+                   
+                </ul>
+            </nav>
+            <div class="footer-text">
+                <p class="footer-text__left section-desc">©interactiveArif 2021. All rights reserved.</p>
+                <div class="footer-right">
+                    <p class="footer-right__desc section-desc">Privacy Policy</p>
+                    <p class="footer-right__note section-desc">Terms of Conditions</p>
+                </div>
+                <div class="footer-text__after"></div>
+            </div>
+        </div>
+        </footer>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init();
+          </script>
     </body>
 </html>
