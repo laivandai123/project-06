@@ -9,6 +9,7 @@ html {
 body {
     font-size: 1.6rem;
     font-family: "DM Sans", sans-serif;
+    overflow-x: hidden;
 }
 :root {
     --text-heading: #080415;
@@ -71,12 +72,12 @@ a {
 .header {
     padding: 40px 0 20px;
 }
-/* .header-fixed {
+.header-fixed {
     position: sticky;
     z-index: 99px;
-    top: -15px;
+    top: 0;
     background: #fff;
-} */
+}
 .navbar {
     display: flex;
     align-items: center;
